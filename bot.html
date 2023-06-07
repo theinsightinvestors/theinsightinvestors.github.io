@@ -101,13 +101,19 @@
             padding: 20px;
         }
 
+        .bold-line {
+            border-top: 3px solid #000;
+            height: 0px;
+            width: 100%;
+        }
+
     </style>
 
 </head>
 <body>
     <nav>
         <div id="logo">
-            <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" alt="Insight Logo"></a>
+            <a href="/"><img src="logo.png" alt="Insight Logo"></a>
             <span>INSIGHT</span>
         </div>
         <ul>
@@ -120,11 +126,18 @@
     <main>
         <section id="bot">
             <h1>Automated Trading Bot</h1>
+            <div style="height: 10px;"></div>
+            <div class="bold-line"></div>
+            <div style="height: 20px;"></div>
             <p>Don't have time to trade? Try our trading bot. Designed by our team of experts, the bot makes trades for you, maximizing your profits while you get on with your day. It's smart trading made simple.</p>
+            <div style="height: 20px;"></div>
             <ul>
                 <li>Trade 24/7: The bot doesn't sleep, eat, or take breaks. It's constantly monitoring the market, making it possible to catch opportunities that a human trader might miss.</li>
+                <div style="height: 20px;"></div>
                 <li>Effective Risk Management: The bot is programmed to stick to the rules no matter what. It won't get emotional or make rash decisions, leading to more consistent results.</li>
+                <div style="height: 20px;"></div>
                 <li>User-Friendly: You don't need any technical knowledge to use our bot. Just set your parameters, and the bot will take care of the rest.</li>
+                <div style="height: 20px;"></div>
             </ul>
 
         <div id="paypal-button-container"></div>
@@ -155,9 +168,13 @@
           }).render('#paypal-button-container'); // Renders the PayPal button
         </script>
 
+        </section>
+    </main>
+
+    <div style="height: 200px;"></div>
 
     <footer>
-        <p>&copy; 2023 Insight. All rights reserved. Our journey is just beginning.</p>
+        <p>&copy; 2023 Insight. All rights reserved. Elevate your trading with the Advanced Group.</p>
     </footer>
 </body>
 </html>
