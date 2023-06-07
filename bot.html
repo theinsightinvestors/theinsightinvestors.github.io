@@ -101,29 +101,13 @@
             padding: 20px;
         }
 
-        .feature-block {
-            margin-bottom: 50px;
-        }
-        .pay-button {
-            margin-top: 30px;
-            background-color: #007BFF;
-            color: #FFFFFF;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .pay-button:hover {
-            background-color: #0056b3;
-        }
     </style>
-    <script src="https://www.paypal.com/sdk/js?client-id=AbtYly2YMsm88BoX6ttL-PGX5FHBgndwkvxpvNz4ciJKpEpiEV5Zk8kLQnhkHmoT1zY_kR9LCzZjteBi&currency=USD"></script>
+
 </head>
 <body>
     <nav>
         <div id="logo">
-            <a href="/"><img src="logo.png" alt="Insight Logo"></a>
+            <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" alt="Insight Logo"></a>
             <span>INSIGHT</span>
         </div>
         <ul>
@@ -142,31 +126,35 @@
                 <li>Effective Risk Management: The bot is programmed to stick to the rules no matter what. It won't get emotional or make rash decisions, leading to more consistent results.</li>
                 <li>User-Friendly: You don't need any technical knowledge to use our bot. Just set your parameters, and the bot will take care of the rest.</li>
             </ul>
-            <div id="paypal-button-container"></div>
-        </section>
-    </main>
 
-    <script>
-        paypal.Buttons({
-        // Set up the transaction
-        createOrder: function(data, actions) {
-            return actions.order.create({
-            purchase_units: [{
-                amount: {
-                value: '49.00' // This value should be the cost of your bot
-                }
-            }]
-            });
-        },
-        // Finalize the transaction
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-            // Show a success message to the buyer
-            alert('Transaction completed by ' + details.payer.name.given_name);
-            });
-        }
-        }).render('#paypal-button-container'); // Display payment options on your web page
-    </script>
+        <div id="paypal-button-container"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=Ab45PdZjBqPObbZGik_9xcK9qKZ4nC-v1LXKmYPKjj1v2tCu3sya_8ijU__rAC30bYb-FrRLBsL8IsIP"></script>
+        <script>
+          paypal.Buttons({
+              style: {
+                  shape: 'pill',
+                  color: 'blue',
+                  layout: 'vertical',
+                  label: 'paypal'
+              },
+              createOrder: function(data, actions) {
+                return actions.order.create({
+                  purchase_units: [{
+                    amount: {
+                      value: '49.00',
+                      currency: 'GBP'
+                    }
+                  }]
+                });
+              },
+              onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                  alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+              }
+          }).render('#paypal-button-container'); // Renders the PayPal button
+        </script>
+
 
     <footer>
         <p>&copy; 2023 Insight. All rights reserved. Our journey is just beginning.</p>
