@@ -100,15 +100,20 @@
             text-align: center;
             padding: 20px;
         }
+
+        <style>
+        .spaced {
+            margin-left: 20px;
+        }        
     </style>
 </head>
 <body>
     <nav>
         <div id="logo">
             <a href="/">
-                <img src="logo.png" alt="Insight Logo">
-                <span>INSIGHT</span>
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Insight Logo">
             </a>
+            <span>INSIGHT</span>
         </div>
         <ul>
             <li><a href="/free">Free</a></li>
@@ -149,7 +154,30 @@
             <p>Becoming an Advanced Group member means joining a community of like-minded traders. This group is a place for discussion, debate, and shared learning. It's an invaluable resource, and it's only available to Advanced Group members.</p>
         </div>
 
-        <p>To join the Advanced Group, simply follow the upgrade process in our Telegram group. We look forward to welcoming you to the team and helping you achieve your trading goals.</p>
+        <p class="spaced">To join the Advanced Group, simply pay here on the website. We look forward to welcoming you to the team and helping you achieve your trading goals.</p>
+
+        <div id="paypal-button-container-P-6HX14928A2982260BMSAGNMA"></div>
+        <script src="https://www.paypal.com/sdk/js?client-id=Ab45PdZjBqPObbZGik_9xcK9qKZ4nC-v1LXKmYPKjj1v2tCu3sya_8ijU__rAC30bYb-FrRLBsL8IsIP&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+        <script>
+          paypal.Buttons({
+              style: {
+                  shape: 'pill',
+                  color: 'blue',
+                  layout: 'vertical',
+                  label: 'paypal'
+              },
+              createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                  /* Creates the subscription */
+                  plan_id: 'P-6HX14928A2982260BMSAGNMA'
+                });
+              },
+              onApprove: function(data, actions) {
+                alert(data.subscriptionID); // You can add optional success message for the subscriber here
+              }
+          }).render('#paypal-button-container-P-6HX14928A2982260BMSAGNMA'); // Renders the PayPal button
+        </script>
+
     </section>
 </main>
 
