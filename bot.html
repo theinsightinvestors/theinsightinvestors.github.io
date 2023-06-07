@@ -123,8 +123,8 @@
 <body>
     <nav>
         <div id="logo">
-            <a href="/"><img src="{{ url_for('static', filename='logo.png') }}" alt="Insight Logo"></a>
-            <span><a href="/">INSIGHT</a></span>
+            <a href="/"><img src="logo.png" alt="Insight Logo"></a>
+            <span>INSIGHT</span>
         </div>
         <ul>
             <li><a href="/free">Free</a></li>
@@ -153,7 +153,7 @@
             return actions.order.create({
             purchase_units: [{
                 amount: {
-                value: '0.01' // This value should be the cost of your bot
+                value: '49.00' // This value should be the cost of your bot
                 }
             }]
             });
