@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight - Advanced Forex and Bitcoin Trading</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            color: #000;
+            padding: 20px 40px;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav #logo {
+            display: flex;
+            align-items: center;
+        }
+
+        nav #logo img {
+            height: 40px;
+        }
+
+        nav #logo span {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #0088cc;
+        }
+
+        main {
+            max-width: 1140px;
+            margin: 100px auto 20px;
+            padding: 20px;
+        }
+
+        section {
+            background: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .feature-block {
+            margin-bottom: 50px;
+        }
+
+        section:hover {
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        section h1,
+        section h2 {
+            margin-bottom: 15px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div id="logo">
+            <a href="/">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Insight Logo">
+                <span>INSIGHT</span>
+            </a>
+        </div>
+        <ul>
+            <li><a href="/free">Free</a></li>
+            <li><a href="/advanced">Advanced</a></li>
+            <li><a href="/bot">Bot</a></li>
+        </ul>
+    </nav>
+
+<main>
+    <section id="advanced">
+        <div class="feature-block">
+            <h2>Advanced Trading Group</h2>
+            <p>The Insight Advanced Group is our premium offering for serious traders. It provides an all-inclusive trading experience, designed to help you reach your full trading potential. Here's a look at some of the key features:</p>
+        </div>
+
+        <div class="feature-block">
+            <h3>Enhanced Signals</h3>
+            <p>Our advanced signals are the best we offer. They're generated using a wider range of strategies and analysis techniques, giving you more opportunities to profit.</p>
+        </div>
+
+        <div class="feature-block">
+            <h3>Comprehensive Trading Education</h3>
+            <p>We don't just tell you what trades to make, we teach you how to find them yourself. Our advanced education program covers everything from basic trading concepts to advanced strategies and market analysis techniques.</p>
+        </div>
+
+        <div class="feature-block">
+            <h3>Exclusive Trading Resources</h3>
+            <p>Advanced Group members gain access to a library of exclusive resources. This includes trading tools, educational materials, and more. These resources are constantly updated to reflect current market conditions and trading best practices.</p>
+        </div>
+
+        <div class="feature-block">
+            <h3>Expert Support</h3>
+            <p>When you join the Advanced Group, you're not alone. Our team of expert traders is available to provide support, answer questions, and guide you on your trading journey. We're here to help you succeed.</p>
+        </div>
+
+        <div class="feature-block">
+            <h3>Community of Serious Traders</h3>
+            <p>Becoming an Advanced Group member means joining a community of like-minded traders. This group is a place for discussion, debate, and shared learning. It's an invaluable resource, and it's only available to Advanced Group members.</p>
+        </div>
+
+        <p>To join the Advanced Group, simply follow the upgrade process in our Telegram group. We look forward to welcoming you to the team and helping you achieve your trading goals.</p>
+    </section>
+</main>
+
+
+    <footer>
+        <p>&copy; 2023 Insight. All rights reserved. Elevate your trading with the Advanced Group.</p>
+    </footer>
+</body>
+</html>
