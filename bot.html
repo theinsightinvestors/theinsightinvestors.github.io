@@ -18,10 +18,12 @@
             padding: 0;
         }
 
+        /* Add margin-top equal to the height of the navbar */
         main {
             max-width: 1140px;
-            margin: 100px auto 20px;
+            margin: 140px auto;  /* increase top margin */
             padding: 20px;
+            text-align: center;
         }
 
         section {
@@ -127,22 +129,17 @@
             transform: scale(1);
         }
 
-        /* Make the nav menu vertical on small screens */
+        /* Modify media queries */
         @media (max-width: 768px) {
             nav {
-                flex-direction: column;
+                padding: 10px 20px;  /* decrease padding */
             }
             nav #logo {
-                margin-bottom: 1rem;
-            }
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                margin-top: 1rem;
+                margin-bottom: 0.5rem;  /* decrease bottom margin */
             }
             nav ul li {
-                margin-left: 0;
-                margin-bottom: 1rem;
+                margin-left: 1rem;  /* decrease left margin */
+                margin-bottom: 0.5rem;  /* decrease bottom margin */
             }
         }
 
