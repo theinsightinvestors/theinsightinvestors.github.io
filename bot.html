@@ -127,6 +127,31 @@
             transform: scale(1);
         }
 
+        /* Make the nav menu vertical on small screens */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav #logo {
+                margin-bottom: 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1rem;
+            }
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Ensure images are not wider than the screen */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
     </style>
 
 </head>
@@ -160,6 +185,10 @@
                 <li>Effective Risk Management: The bot is programmed to stick to the rules no matter what. It won't get emotional or make rash decisions, leading to more consistent results.</li>
                 <div style="height: 20px;"></div>
                 <li>User-Friendly: You don't need any technical knowledge to use our bot. Just set your parameters, and the bot will take care of the rest.</li>
+                <div style="height: 20px;"></div>
+                <img src="bot_pic.jpg" alt="Bot">
+                <div style="height: 20px;"></div>
+                <h1>£49</h1>
                 <div style="height: 20px;"></div>
             </ul>
 

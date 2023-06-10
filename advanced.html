@@ -128,6 +128,31 @@
             width: 100%;
         }
 
+        /* Make the nav menu vertical on small screens */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav #logo {
+                margin-bottom: 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1rem;
+            }
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Ensure images are not wider than the screen */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
     </style>
 </head>
 <body>

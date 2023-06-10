@@ -189,6 +189,32 @@
             width: 100%;
         }
 
+        /* Make the nav menu vertical on small screens */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav #logo {
+                margin-bottom: 1rem;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 1rem;
+            }
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 1rem;
+            }
+        }
+
+        /* Ensure images are not wider than the screen */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+
     </style>
 </head>
 <body>
@@ -227,25 +253,41 @@
         </section>
 
         <section id="free">
+            <a href="/free" style="display: block; text-decoration: none; color: inherit;">
             <h2>Free</h2>
             <p>Join our rapidly growing community of traders on Telegram. We provide free signals that can help you make profitable trades in the Forex and Bitcoin markets.</p>
             <div style="height: 20px;"></div>
             <div class="dotted-line"></div>
             <div style="height: 20px;"></div>
+            </a>
         </section>
 
         <section id="advanced">
-            <h2>Advanced</h2>
-            <p>Upgrade to our Advanced Group for premium services. For a monthly fee, you get access to advanced signals, in-depth analysis, and comprehensive trading education. It's the ultimate package for serious traders.</p>
+            <a href="/advanced" style="display: block; text-decoration: none; color: inherit;">
+                <h2>Advanced</h2>
+                <p>Upgrade to our Advanced Group for premium services. For a monthly fee, you get access to advanced signals, in-depth analysis, and comprehensive trading education. It's the ultimate package for serious traders.</p>
+                <div style="height: 20px;"></div>
+                <div class="dotted-line"></div>
+                <div style="height: 20px;"></div>
+            </a>
+        </section>
+
+        <section id="courses">
+            <a href="/courses" style="display: block; text-decoration: none; color: inherit;">
+            <h2>Courses</h2>
+            <p>If you don't know where to start, check out our courses. We offer 3 types to reach all people wether your a beginner or already an expert. We have the most comprehensive courses and can build your trading knowledge exponentially.</p>
             <div style="height: 20px;"></div>
             <div class="dotted-line"></div>
             <div style="height: 20px;"></div>
+            </a>
         </section>
 
         <section id="bot">
+            <a href="/bot" style="display: block; text-decoration: none; color: inherit;">
             <h2>Bot</h2>
             <p>Don't have time to trade? Try our trading bot. Designed by our team of experts, the bot makes trades for you, maximizing your profits while you get on with your day. It's smart trading made simple.</p>
             <div style="height: 20px;"></div>
+            </a>
         </section>
     </main>
 
