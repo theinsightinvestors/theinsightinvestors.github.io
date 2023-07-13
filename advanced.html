@@ -209,34 +209,83 @@
             <div style="height: 20px;"></div>
             <p>Becoming an Advanced Group member means joining a community of like-minded traders. This group is a place for discussion, debate, and shared learning. It's an invaluable resource, and it's only available to Advanced Group members.</p>
             <div style="height: 20px;"></div>
-            <h3>£25 p/m</h3>
+
+<section>
+    <div style="display: flex; justify-content: center;">
+        <div class="price-button">
+            <div style="margin-bottom: 20px;">
+                <h3><del style="color: red; font-weight: bold;">£299</del> &nbsp;<span style="color: black; font-weight: bold;">£89</span> | One-Time</h3>
+                <div id="paypal-button-container-onetime" class="paypal-buttons"></div>
+            </div>
         </div>
-
-        <div id="paypal-button-container-P-6HX14928A2982260BMSAGNMA"></div>
-        <script src="https://www.paypal.com/sdk/js?client-id=Ab45PdZjBqPObbZGik_9xcK9qKZ4nC-v1LXKmYPKjj1v2tCu3sya_8ijU__rAC30bYb-FrRLBsL8IsIP&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
-        <script>
-          paypal.Buttons({
-              style: {
-                  shape: 'pill',
-                  color: 'blue',
-                  layout: 'vertical',
-                  label: 'paypal'
-              },
-              createSubscription: function(data, actions) {
-                return actions.subscription.create({
-                  /* Creates the subscription */
-                  plan_id: 'P-0WF716888D699543DMSBRG5Q'
+        <div class="price-button">
+            <h3 style="margin-bottom: 20px;">£25 | p/m</h3>
+            <div id="paypal-button-container-monthly" class="paypal-buttons"></div>
+        </div>
+    </div>
+    <script src="https://www.paypal.com/sdk/js?client-id=Ab45PdZjBqPObbZGik_9xcK9qKZ4nC-v1LXKmYPKjj1v2tCu3sya_8ijU__rAC30bYb-FrRLBsL8IsIP&vault=true"></script>
+    <script>
+        paypal.Buttons({
+            style: {
+                shape: 'pill',
+                color: 'blue',
+                layout: 'horizontal',
+                label: 'paypal',
+                tagline: false,
+                height: 45
+            },
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '117.00',
+                            currency: 'USD'
+                        }
+                    }]
                 });
-              },
-              onApprove: function(data, actions) {
-                alert(data.subscriptionID); // You can add optional success message for the subscriber here
-              }
-          }).render('#paypal-button-container-P-6HX14928A2982260BMSAGNMA'); // Renders the PayPal button
-        </script>
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Transaction completed by ' + details.payer.name.given_name);
+                });
+            }
+        }).render('#paypal-button-container-onetime'); // Render the PayPal button for the one-time payment
 
-    </section>
+        paypal.Buttons({
+            style: {
+                shape: 'pill',
+                color: 'blue',
+                layout: 'horizontal',
+                label: 'paypal',
+                tagline: false,
+                height: 45
+            },
+            createSubscription: function(data, actions) {
+                return actions.subscription.create({
+                    /* Creates the subscription */
+                    plan_id: 'P-0WF716888D699543DMSBRG5Q'
+                });
+            },
+            onApprove: function(data, actions) {
+                alert(data.subscriptionID); // You can add an optional success message for the subscriber here
+            }
+        }).render('#paypal-button-container-monthly'); // Render the PayPal button for the monthly subscription
+    </script>
+    <style>
+        .price-button {
+            text-align: center;
+            margin: 0 10px;
+            flex: 1;  
+        }
+
+        .paypal-buttons {
+            width: 100%;  
+            margin: 10px;
+        }
+    </style>
+</section>
+
 </main>
-
 
     <footer>
         <p>&copy; 2023 Insight. All rights reserved. Elevate your trading with the Advanced Group.</p>
