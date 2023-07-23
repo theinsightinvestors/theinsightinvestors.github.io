@@ -2,6 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="logo.ico" type="image/x-icon">
     <title>Insight - Advanced Forex and Bitcoin Trading</title>
@@ -150,6 +154,34 @@
             height: auto;
         }
 
+        /* Newly added styles */
+        .price-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .price-button {
+            text-align: center;
+            margin: 0 10px;
+            flex: 1;  
+        }
+
+        .paypal-buttons {
+            width: 100%;  
+            margin: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .price-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .price-button {
+                max-width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -161,10 +193,9 @@
             <span>INSIGHT</span>
         </div>
         <ul>
-            <li><a href="/free">Free</a></li>
+             <li><a href="/free">Free</a></li>
             <li><a href="/advanced">Advanced</a></li>
             <li><a href="/courses">Courses</a></li>
-            <li><a href="/bot">Bot</a></li>
         </ul>
     </nav>
 
@@ -214,12 +245,13 @@
     <div style="display: flex; justify-content: center;">
         <div class="price-button">
             <div style="margin-bottom: 20px;">
-                <h3><del style="color: red; font-weight: bold;">£299</del> &nbsp;<span style="color: black; font-weight: bold;">£89</span> | One-Time</h3>
+                <h3><del style="color: red; font-weight: bold;">£299</del> &nbsp;<span style="color: black; font-weight: bold;">£129</span> | One-Time &#x1F550;</h3>
+
                 <div id="paypal-button-container-onetime" class="paypal-buttons"></div>
             </div>
         </div>
         <div class="price-button">
-            <h3 style="margin-bottom: 20px;">£25 | p/m</h3>
+            <h3 style="margin-bottom: 20px;">£39 | p/m</h3>
             <div id="paypal-button-container-monthly" class="paypal-buttons"></div>
         </div>
     </div>
@@ -238,8 +270,8 @@
                 return actions.order.create({
                     purchase_units: [{
                         amount: {
-                            value: '117.00',
-                            currency: 'USD'
+                            value: '165.00',
+                            currency: 'GBP'
                         }
                     }]
                 });
